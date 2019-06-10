@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import React from "react";
+import { createPortal } from "react-dom";
 import { jsx } from "@emotion/core";
 import { FaPlus } from "react-icons/fa";
 
@@ -38,6 +39,16 @@ function Employee({
   }, [isModalOpen]);
 
   const isHighlighted = highlightedTitle === title;
+
+  const $portal = React.useMemo(() => {
+    let $portal = document.getElementById("portal");
+    if (!$portal) {
+      $portal = document.createElement("div");
+      $portal.setAttribute("id", "portal");
+      document.body.appendChild($portal);
+    }
+    return $portal;
+  }, []);
 
   return (
     <div>
@@ -105,11 +116,13 @@ function Employee({
             />
           ))}
       </section>
-      {isModalOpen && (
-        <Modal>
-          <EmployeeForm companyName={companyName} onSubmit={handleSubmit} />
-        </Modal>
-      )}
+      {isModalOpen &&
+        createPortal(
+          <Modal>
+            <EmployeeForm companyName={companyName} onSubmit={handleSubmit} />
+          </Modal>,
+          $portal
+        )}
     </div>
   );
 }
