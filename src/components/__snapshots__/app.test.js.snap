@@ -794,7 +794,7 @@ exports[`App 4`] = `
 
 exports[`App 5`] = `
 <DocumentFragment>
-  .emotion-20 {
+  .emotion-11 {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -811,63 +811,7 @@ exports[`App 5`] = `
   align-items: center;
 }
 
-.emotion-11 {
-  background: none;
-  border: 1px solid #eaeaea;
-  border-radius: .25rem;
-  box-sizing: border-box;
-  display: block;
-  font-size: 1rem;
-  padding: .5rem;
-  width: 100%;
-}
-
-.emotion-11:focus {
-  outline: none;
-  border-color: #444444;
-}
-
-.emotion-15 {
-  background-color: black;
-  border: 1px solid black;
-  border-radius: .25rem;
-  color: white;
-  cursor: pointer;
-  font-size: .8rem;
-  padding: .75rem 0;
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
-}
-
-.emotion-15:hover {
-  background-color: white;
-  color: black;
-}
-
-.emotion-16 {
-  background: white;
-  border-radius: .5em;
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,.12);
-  box-sizing: border-box;
-  padding: 2rem;
-  width: 100%;
-  max-width: 450px;
-}
-
 .emotion-10 {
-  font-size: 2rem;
-  font-weight: normal;
-  margin: 0;
-}
-
-.emotion-12 {
-  margin: 2rem 0;
-}
-
-.emotion-19 {
   min-height: 100vh;
   width: 100%;
   padding: 3rem;
@@ -875,7 +819,7 @@ exports[`App 5`] = `
 }
 
 @media (max-width:460px) {
-  .emotion-19 {
+  .emotion-10 {
     padding: 1rem;
   }
 }
@@ -1033,44 +977,11 @@ exports[`App 5`] = `
   margin: 1rem 0 0 3rem;
 }
 
-.emotion-18 {
-  background-color: rgba(0,0,0,.5);
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
-}
-
-.emotion-17 {
-  position: fixed;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 80%;
-  max-width: 450px;
-  z-index: 110;
-}
-
 <main
-    class="emotion-20"
+    class="emotion-11"
   >
     <section
-      class="emotion-19"
+      class="emotion-10"
     >
       <div
         class="emotion-4"
@@ -1161,56 +1072,6 @@ exports[`App 5`] = `
         <section
           class="emotion-9"
         />
-        <div
-          class="emotion-18"
-        >
-          <div
-            class="emotion-17"
-            role="dialog"
-          >
-            <div
-              class="emotion-16"
-            >
-              <form>
-                <h1
-                  class="emotion-10"
-                >
-                  Testing Inc.'s Employee Name
-                </h1>
-                <div
-                  class="emotion-12"
-                >
-                  <input
-                    aria-label="Write the employee name"
-                    class="emotion-11"
-                    name="name"
-                    placeholder="John Doe"
-                    required=""
-                    type="text"
-                    value=""
-                  />
-                </div>
-                <div
-                  class="emotion-12"
-                >
-                  <input
-                    aria-label="Write the employee title"
-                    class="emotion-11"
-                    name="title"
-                    placeholder="Software Engineer"
-                    type="text"
-                    value=""
-                  />
-                </div>
-                <button
-                  class="emotion-15"
-                >
-                  Create employee
-                </button>
-              </form>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </main>
