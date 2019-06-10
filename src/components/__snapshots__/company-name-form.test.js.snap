@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CompanyName 1`] = `
+<DocumentFragment>
+  .emotion-4 {
+  background: white;
+  border-radius: .5em;
+  box-shadow: 0px 2px 5px 0px rgba(0,0,0,.12);
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.emotion-0 {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0;
+}
+
+.emotion-2 {
+  margin: 2rem 0;
+}
+
+.emotion-1 {
+  background: none;
+  border: 1px solid #eaeaea;
+  border-radius: .25rem;
+  box-sizing: border-box;
+  display: block;
+  font-size: 1rem;
+  padding: .5rem;
+  width: 100%;
+}
+
+.emotion-1:focus {
+  outline: none;
+  border-color: #444444;
+}
+
+.emotion-3 {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: .25rem;
+  color: white;
+  cursor: pointer;
+  font-size: .8rem;
+  padding: .75rem 0;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.emotion-3:hover {
+  background-color: white;
+  color: black;
+}
+
+<div
+    class="emotion-4"
+  >
+    <form>
+      <h1
+        class="emotion-0"
+      >
+        Company Name
+      </h1>
+      <div
+        class="emotion-2"
+      >
+        <input
+          aria-label="Enter your company name"
+          class="emotion-1"
+          placeholder="ACME Inc."
+          type="text"
+          value=""
+        />
+      </div>
+      <button
+        class="emotion-3"
+      >
+        Set company name
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
