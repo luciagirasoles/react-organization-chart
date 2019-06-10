@@ -7,6 +7,8 @@ import EmployeeForm from "./employee-form";
 import Employee from "./employee";
 import Filter from "./filter";
 
+import { Provider as EmployeesProvider } from "../contexts/employees";
+
 const initialEmployees = localStorage.getItem("employees");
 
 function App() {
@@ -63,63 +65,64 @@ function App() {
   ];
 
   return (
-    <main
-      css={{
-        width: "100%",
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
-      }}
-    >
-      <Global
-        styles={{
-          body: {
-            background: "#fafafa",
-            fontFamily:
-              "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
-            margin: 0
-          }
+    <EmployeesProvider value={employees}>
+      <main
+        css={{
+          width: "100%",
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
         }}
-      />
-      {!companyName && <CompanyNameForm onSubmit={handleCompanyNameSubmit} />}
-      {companyName && !employees && (
-        <EmployeeForm
-          onSubmit={handleCEOFormSubmit}
-          companyName={companyName}
-          title="CEO"
-        />
-      )}
-      {companyName && employees && (
-        <section
-          css={{
-            minHeight: "100vh",
-            width: "100%",
-            padding: "3rem",
-            boxSizing: "border-box",
-            "@media (max-width: 460px)": {
-              padding: "1rem"
+      >
+        <Global
+          styles={{
+            body: {
+              background: "#fafafa",
+              fontFamily:
+                "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+              margin: 0
             }
           }}
-        >
-          <Filter
-            titles={titles}
-            onChange={handleFilterChange}
-            value={highlightedTitle}
-          />
-          <Employee
-            {...Object.values(employees).find(
-              employee => employee.title === "CEO"
-            )}
-            employees={employees}
+        />
+        {!companyName && <CompanyNameForm onSubmit={handleCompanyNameSubmit} />}
+        {companyName && !employees && (
+          <EmployeeForm
+            onSubmit={handleCEOFormSubmit}
             companyName={companyName}
-            onNewSubordinate={handleNewSubordinate}
-            level={0}
-            highlightedTitle={highlightedTitle}
+            title="CEO"
           />
-        </section>
-      )}
-    </main>
+        )}
+        {companyName && employees && (
+          <section
+            css={{
+              minHeight: "100vh",
+              width: "100%",
+              padding: "3rem",
+              boxSizing: "border-box",
+              "@media (max-width: 460px)": {
+                padding: "1rem"
+              }
+            }}
+          >
+            <Filter
+              titles={titles}
+              onChange={handleFilterChange}
+              value={highlightedTitle}
+            />
+            <Employee
+              {...Object.values(employees).find(
+                employee => employee.title === "CEO"
+              )}
+              companyName={companyName}
+              onNewSubordinate={handleNewSubordinate}
+              level={0}
+              highlightedTitle={highlightedTitle}
+            />
+          </section>
+        )}
+      </main>
+    </EmployeesProvider>
   );
 }
 
